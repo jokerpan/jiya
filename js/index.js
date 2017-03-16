@@ -1,18 +1,28 @@
 $(function(){
-	$('.service-body>li').hover(function() {
+	/*$('.service-body>li').hover(function() {
 		$(this).children('button').removeClass('btn-default');
 		$(this).children('button').addClass('btn-primary');
 	}, function() {
 		$(this).children('button').removeClass('btn-primary');
 		$(this).children('button').addClass('btn-default');
+	});*/
+
+	$('.service-body>li>button').click(function(event) {
+		var old = $('.service-body>li button').filter('.btn-primary');
+		var num = $(this).parents('.float-left').index();
+		var oldnum = old.parents('.float-left').index();
+		old.removeClass('btn-primary');
+		old.addClass('btn-default');
+		$(this).addClass('btn-primary');
+		$('.img'+(oldnum+1)).hide();
+		$('.img'+(num+1)).show();
 	});
 
 
-	$('.service-body>li>ul li').hover(function() {
-		$(this).append('<div onclick="imgClick()" class="background-color" data-toggle="modal" data-target="#myModal">'
-			+'书记画册</div>');
+	$('.service-img li').hover(function() {
+		$(this).children('div').show();
 	}, function() {
-		$(this).children('div').remove('.background-color');
+		$(this).children('div').hide();
 	});
 
 	$('.contact li:eq(1)').hover(function() {
@@ -20,6 +30,12 @@ $(function(){
 		$('.qrcode').show();
 	}, function() {
 		$('.qrcode').hide();
+	});
+
+	$('.contact li:eq(0)').hover(function() {
+		$(this).children('ul').show();
+	}, function() {
+		$(this).children('ul').show();
 	});
 
 	$('#myModal').on('show.bs.modal', function(event) {

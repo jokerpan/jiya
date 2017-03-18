@@ -14,9 +14,11 @@ a{
 	color: #000;
 }
 .nav-active{
-	filter:invert(1);
 	background: rgb(56, 56, 58);
 	color: #fff;
+}
+.img-invert{
+	filter: invert(1);
 }
 ul{
 	list-style: none;
@@ -47,8 +49,9 @@ ul{
 }
 .logo-bg img{
 	position: absolute;
+	width: 17%;
 	top: 25px;
-	left: 95px;
+	left: 7%;
 	z-index: 100;
 }
 .logo-bg a{
@@ -63,6 +66,7 @@ ul{
 	height: 60px;
 }
 .realnav>li{
+	padding: 0;
 	cursor: pointer;
 	border-left: solid 1px rgb(56, 56, 58)
 }
@@ -106,6 +110,7 @@ ul{
 	position: fixed;
 	right: 78px;
 	top: 50%;
+	z-index: 100;
 }
 #aboutus{
 	margin-top: 100px;
@@ -140,13 +145,13 @@ ul{
 }
 .service-body>li{
 	text-align: center;
-	width: 25%;
 	height: 55px;
 }
 .service-body>li>button{
 	height: 55px;
-	border-radius: 10%;
+	border-radius: 27px;
 	margin-bottom: 20px;
+	overflow: hidden;
 }
 .service-img{
 	width: 83%;
@@ -155,10 +160,7 @@ ul{
 	margin-right: 10%;
 }
 .service-img li{
-	width: 23%;
 	height: 130px;
-	margin-right: 1%;
-	margin-left: 1%;
 	cursor: pointer;
 	background-repeat: no-repeat;
 	background-size: 100% 130px;

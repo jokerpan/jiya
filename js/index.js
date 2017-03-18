@@ -6,11 +6,11 @@ $(function(){
 		$(this).children('button').removeClass('btn-primary');
 		$(this).children('button').addClass('btn-default');
 	});*/
-
+	$('.service-img li').addClass('col-md-3 col-lg-3 col-sm-6 col-xs-6');
 	$('.service-body>li>button').click(function(event) {
 		var old = $('.service-body>li button').filter('.btn-primary');
-		var num = $(this).parents('.float-left').index();
-		var oldnum = old.parents('.float-left').index();
+		var num = $(this).parents('li').index();
+		var oldnum = old.parents('li').index();
 		old.removeClass('btn-primary');
 		old.addClass('btn-default');
 		$(this).addClass('btn-primary');
@@ -40,7 +40,7 @@ $(function(){
 
 	$('#myModal').on('show.bs.modal', function(event) {
 		var button = $(event.relatedTarget);
-		var num1 = button.parents('.float-left').index();
+		var num1 = button.parents('li').index();
         var num2 = button.parents('li').index();
         var message2 = new Array();
 		message2[0] = new Array('aaaaaaaaaaa','bbbbbbbbbbb');
